@@ -19,7 +19,7 @@ class CreateTransactionInsTable extends Migration
             $table->string('staff_no');
             $table->integer('material_id');
             $table->integer('place_id');
-            $table->string('description');
+            $table->text('description');
             $table->integer('quantity');
             $table->timestamps();
         });
