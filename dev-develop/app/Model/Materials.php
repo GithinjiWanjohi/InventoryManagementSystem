@@ -17,4 +17,16 @@ class Materials extends Model
     protected $fillable = [
         'name', 'description'
     ];
+
+    public function Categories(){
+        return $this->belongsTo(Categories::class);
+    }
+
+    public function TransactionIn(){
+        return $this->hasMany(TransactionIn::class);
+    }
+
+    public function TransactionOut(){
+        return $this->hasMany(TransactionOut::class);
+    }
 }

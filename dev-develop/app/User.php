@@ -2,6 +2,8 @@
 
 namespace App;
 
+use App\Model\TransactionIn;
+use App\Model\TransactionOut;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -27,4 +29,12 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function TransactionIn(){
+        return $this->hasMany(TransactionIn::class);
+    }
+
+    public function TransactionOut(){
+        return $this->hasMany(TransactionOut::class);
+    }
 }

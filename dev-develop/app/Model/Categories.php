@@ -17,4 +17,8 @@ class Categories extends Model
     protected $fillable = [
         'category_name', 'description'
     ];
+
+    public function Materials(){
+        return $this->hasMany(Materials::class);
+    }
 }

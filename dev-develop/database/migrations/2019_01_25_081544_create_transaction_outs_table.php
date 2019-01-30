@@ -16,8 +16,8 @@ class CreateTransactionOutsTable extends Migration
         Schema::create('transaction_outs', function (Blueprint $table) {
             $table->increments('id');
             $table->dateTime('dateTime_out');
-            $table->integer('staff_no');
-            $table->integer('material_id');
+            $table->integer('user_id');
+            $table->integer('materials_id');
             $table->integer('place_id');
             $table->text('description');
             $table->integer('quantity');

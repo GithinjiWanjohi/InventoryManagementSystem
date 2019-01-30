@@ -16,8 +16,8 @@ class CreateTransactionInsTable extends Migration
         Schema::create('transaction_ins', function (Blueprint $table) {
             $table->increments('id');
             $table->dateTime('dateTime_in');
-            $table->string('staff_no');
-            $table->integer('material_id');
+            $table->string('user_id');
+            $table->integer('materials_id');
             $table->integer('place_id');
             $table->text('description');
             $table->integer('quantity');

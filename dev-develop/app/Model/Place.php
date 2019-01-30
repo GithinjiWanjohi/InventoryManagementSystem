@@ -17,4 +17,12 @@ class Place extends Model
     protected $fillable = [
         'place_name', 'description'
     ];
+
+    public function TransactionIn(){
+        return $this->hasMany(TransactionIn::class);
+    }
+
+    public function TransactionOut(){
+        return $this->hasMany(TransactionOut::class);
+    }
 }
