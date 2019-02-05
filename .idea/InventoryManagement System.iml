@@ -31,6 +31,8 @@
       <excludeFolder url="file://$MODULE_DIR$/dev-develop/vendor/laravel/tinker" />
       <excludeFolder url="file://$MODULE_DIR$/dev-develop/vendor/lcobucci/jwt" />
       <excludeFolder url="file://$MODULE_DIR$/dev-develop/vendor/league/flysystem" />
+      <excludeFolder url="file://$MODULE_DIR$/dev-develop/vendor/league/fractal" />
+      <excludeFolder url="file://$MODULE_DIR$/dev-develop/vendor/metricloop/laravel-transformer-maker" />
       <excludeFolder url="file://$MODULE_DIR$/dev-develop/vendor/mockery/mockery" />
       <excludeFolder url="file://$MODULE_DIR$/dev-develop/vendor/monolog/monolog" />
       <excludeFolder url="file://$MODULE_DIR$/dev-develop/vendor/myclabs/deep-copy" />

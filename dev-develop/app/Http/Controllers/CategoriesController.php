@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\Categories\CategoriesResource;
 use App\Model\Categories;
 use Illuminate\Http\Request;
 
@@ -10,11 +11,11 @@ class CategoriesController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Categories[]|\Illuminate\Database\Eloquent\Collection
      */
     public function index()
     {
-        //
+        return Categories::all();
     }
 
     /**
@@ -42,11 +43,13 @@ class CategoriesController extends Controller
      * Display the specified resource.
      *
      * @param  \App\Model\Categories  $categories
-     * @return \Illuminate\Http\Response
+     * @return CategoriesResource
      */
-    public function show(Categories $categories)
+    public function show($id)
     {
-        //
+        $category = Categories::findOrFail($id);
+        //Return as a resource
+        return new CategoriesResource($category);
     }
 
     /**

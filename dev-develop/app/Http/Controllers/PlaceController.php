@@ -10,11 +10,11 @@ class PlaceController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Place[]|\Illuminate\Database\Eloquent\Collection
      */
     public function index()
     {
-        //
+        return Place::all();
     }
 
     /**

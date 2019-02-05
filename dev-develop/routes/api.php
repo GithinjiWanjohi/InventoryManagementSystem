@@ -21,7 +21,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::apiResource('/categories', 'CategoriesController');
 
 
-Route::apiResource('/place', 'PlaceController');
+Route::apiResource('/places', 'PlaceController');
 
 
 Route::apiResource('/materials', 'MaterialsController');

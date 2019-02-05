@@ -15,7 +15,8 @@ class Materials extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'description'
+        'name',
+        'categories_id'
     ];
 
     public function Categories(){

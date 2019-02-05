@@ -10,11 +10,11 @@ class TransactionInController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return TransactionIn[]|\Illuminate\Database\Eloquent\Collection
      */
     public function index()
     {
-        //
+        return TransactionIn::all();
     }
 
     /**

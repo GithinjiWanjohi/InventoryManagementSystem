@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\Materials\MaterialsResource;
 use App\Model\Materials;
 use Illuminate\Http\Request;
 
@@ -10,11 +11,11 @@ class MaterialsController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Materials[]|\Illuminate\Database\Eloquent\Collection
      */
     public function index()
     {
-        //
+        return Materials::all();
     }
 
     /**
@@ -42,11 +43,13 @@ class MaterialsController extends Controller
      * Display the specified resource.
      *
      * @param  \App\Model\Materials  $materials
-     * @return \Illuminate\Http\Response
+     * @return MaterialsResource
      */
-    public function show(Materials $materials)
+    public function show($id)
     {
-        //
+        $material = Materials::findOrFail($id);
+        //Return as a resource
+        return new MaterialsResource($material);
     }
 
     /**

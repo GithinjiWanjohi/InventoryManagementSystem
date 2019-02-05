@@ -10,11 +10,11 @@ class TransactionOutController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return TransactionOut[]|\Illuminate\Database\Eloquent\Collection
      */
     public function index()
     {
-        //
+        return TransactionOut::all();
     }
 
     /**
