@@ -17,7 +17,9 @@ class MaterialsResource extends Resource
     {
         return [
             'name' => $this->name,
-            'categories_id' => $this->categories_id,
+            'href' => [
+              'categories_id' => route('categories.show', $this->id)
+            ],
         ];
     }
 }

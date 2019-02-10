@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\Categories\CategoriesCollection;
 use App\Http\Resources\Categories\CategoriesResource;
 use App\Model\Categories;
 use Illuminate\Http\Request;
@@ -11,11 +12,11 @@ class CategoriesController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return Categories[]|\Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
      */
     public function index()
     {
-        return Categories::all();
+        return CategoriesCollection::collection(Categories::paginate(20));
     }
 
     /**

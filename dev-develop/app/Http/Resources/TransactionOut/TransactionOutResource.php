@@ -14,6 +14,13 @@ class TransactionOutResource extends JsonResource
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
+        return [
+            'dateTime_out' => $this->dateTime_out,
+            'user_id' => $this->user_id,
+            'materials_id' => $this->materials_id,
+            'place_id' => $this->place_id,
+            'description' => $this->description,
+            'quantity' => $this->quantity,
+        ];
     }
 }

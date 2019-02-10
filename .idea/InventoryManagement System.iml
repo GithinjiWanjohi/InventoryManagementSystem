@@ -6,6 +6,7 @@
       <sourceFolder url="file://$MODULE_DIR$/dev-develop/tests" isTestSource="true" packagePrefix="Tests\" />
       <excludeFolder url="file://$MODULE_DIR$/dev-develop/vendor/beyondcode/laravel-dump-server" />
       <excludeFolder url="file://$MODULE_DIR$/dev-develop/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/dev-develop/vendor/defuse/php-encryption" />
       <excludeFolder url="file://$MODULE_DIR$/dev-develop/vendor/dnoegel/php-xdg-base-dir" />
       <excludeFolder url="file://$MODULE_DIR$/dev-develop/vendor/doctrine/cache" />
       <excludeFolder url="file://$MODULE_DIR$/dev-develop/vendor/doctrine/dbal" />
@@ -18,6 +19,7 @@
       <excludeFolder url="file://$MODULE_DIR$/dev-develop/vendor/erusev/parsedown" />
       <excludeFolder url="file://$MODULE_DIR$/dev-develop/vendor/fideloper/proxy" />
       <excludeFolder url="file://$MODULE_DIR$/dev-develop/vendor/filp/whoops" />
+      <excludeFolder url="file://$MODULE_DIR$/dev-develop/vendor/firebase/php-jwt" />
       <excludeFolder url="file://$MODULE_DIR$/dev-develop/vendor/fzaninotto/faker" />
       <excludeFolder url="file://$MODULE_DIR$/dev-develop/vendor/guzzlehttp/guzzle" />
       <excludeFolder url="file://$MODULE_DIR$/dev-develop/vendor/guzzlehttp/promises" />
@@ -27,11 +29,14 @@
       <excludeFolder url="file://$MODULE_DIR$/dev-develop/vendor/jakub-onderka/php-console-highlighter" />
       <excludeFolder url="file://$MODULE_DIR$/dev-develop/vendor/laravel/framework" />
       <excludeFolder url="file://$MODULE_DIR$/dev-develop/vendor/laravel/nexmo-notification-channel" />
+      <excludeFolder url="file://$MODULE_DIR$/dev-develop/vendor/laravel/passport" />
       <excludeFolder url="file://$MODULE_DIR$/dev-develop/vendor/laravel/slack-notification-channel" />
       <excludeFolder url="file://$MODULE_DIR$/dev-develop/vendor/laravel/tinker" />
       <excludeFolder url="file://$MODULE_DIR$/dev-develop/vendor/lcobucci/jwt" />
+      <excludeFolder url="file://$MODULE_DIR$/dev-develop/vendor/league/event" />
       <excludeFolder url="file://$MODULE_DIR$/dev-develop/vendor/league/flysystem" />
       <excludeFolder url="file://$MODULE_DIR$/dev-develop/vendor/league/fractal" />
+      <excludeFolder url="file://$MODULE_DIR$/dev-develop/vendor/league/oauth2-server" />
       <excludeFolder url="file://$MODULE_DIR$/dev-develop/vendor/metricloop/laravel-transformer-maker" />
       <excludeFolder url="file://$MODULE_DIR$/dev-develop/vendor/mockery/mockery" />
       <excludeFolder url="file://$MODULE_DIR$/dev-develop/vendor/monolog/monolog" />
@@ -50,6 +55,7 @@
       <excludeFolder url="file://$MODULE_DIR$/dev-develop/vendor/phpdocumentor/reflection-common" />
       <excludeFolder url="file://$MODULE_DIR$/dev-develop/vendor/phpdocumentor/reflection-docblock" />
       <excludeFolder url="file://$MODULE_DIR$/dev-develop/vendor/phpdocumentor/type-resolver" />
+      <excludeFolder url="file://$MODULE_DIR$/dev-develop/vendor/phpseclib/phpseclib" />
       <excludeFolder url="file://$MODULE_DIR$/dev-develop/vendor/phpspec/prophecy" />
       <excludeFolder url="file://$MODULE_DIR$/dev-develop/vendor/phpunit/php-code-coverage" />
       <excludeFolder url="file://$MODULE_DIR$/dev-develop/vendor/phpunit/php-file-iterator" />
@@ -88,6 +94,7 @@
       <excludeFolder url="file://$MODULE_DIR$/dev-develop/vendor/symfony/polyfill-mbstring" />
       <excludeFolder url="file://$MODULE_DIR$/dev-develop/vendor/symfony/polyfill-php72" />
       <excludeFolder url="file://$MODULE_DIR$/dev-develop/vendor/symfony/process" />
+      <excludeFolder url="file://$MODULE_DIR$/dev-develop/vendor/symfony/psr-http-message-bridge" />
       <excludeFolder url="file://$MODULE_DIR$/dev-develop/vendor/symfony/routing" />
       <excludeFolder url="file://$MODULE_DIR$/dev-develop/vendor/symfony/translation" />
       <excludeFolder url="file://$MODULE_DIR$/dev-develop/vendor/symfony/var-dumper" />

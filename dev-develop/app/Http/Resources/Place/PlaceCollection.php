@@ -2,9 +2,9 @@
 
 namespace App\Http\Resources\Place;
 
-use Illuminate\Http\Resources\Json\ResourceCollection;
+use Illuminate\Http\Resources\Json\Resource;
 
-class PlaceCollection extends ResourceCollection
+class PlaceCollection extends Resource
 {
     /**
      * Transform the resource collection into an array.
@@ -14,6 +14,12 @@ class PlaceCollection extends ResourceCollection
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
+        return [
+            'place_name' => $this->place_name,
+            'description' => $this->description,
+            'href' => [
+                'link' => route('products.show', $this->id)
+            ],
+        ];
     }
 }

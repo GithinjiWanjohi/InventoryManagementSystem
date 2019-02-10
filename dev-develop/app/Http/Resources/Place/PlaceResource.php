@@ -14,6 +14,9 @@ class PlaceResource extends JsonResource
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
+        return [
+            'place_name' => $this->place_name,
+            'description' => $this->description,
+        ];
     }
 }

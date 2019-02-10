@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\Materials\MaterialsCollection;
 use App\Http\Resources\Materials\MaterialsResource;
 use App\Model\Materials;
 use Illuminate\Http\Request;
@@ -11,11 +12,11 @@ class MaterialsController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return Materials[]|\Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
      */
     public function index()
     {
-        return Materials::all();
+        return MaterialsCollection::collection(Materials::paginate(20));
     }
 
     /**

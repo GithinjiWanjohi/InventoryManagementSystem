@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\TransactionOut\TransactionOutCollection;
+use App\Http\Resources\TransactionOut\TransactionOutResource;
 use App\Model\TransactionOut;
 use Illuminate\Http\Request;
 
@@ -10,11 +12,11 @@ class TransactionOutController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return TransactionOut[]|\Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
      */
     public function index()
     {
-        return TransactionOut::all();
+        return TransactionOutCollection::collection(TransactionOut::paginate(50));
     }
 
     /**
@@ -42,11 +44,13 @@ class TransactionOutController extends Controller
      * Display the specified resource.
      *
      * @param  \App\Model\TransactionOut  $transactionOut
-     * @return \Illuminate\Http\Response
+     * @return TransactionOutResource
      */
-    public function show(TransactionOut $transactionOut)
+    public function show($id)
     {
-        //
+        $transactionOut = TransactionOut::findOrFail($id);
+        //Return as a resource
+        return new TransactionOutResource($transactionOut);
     }
 
     /**

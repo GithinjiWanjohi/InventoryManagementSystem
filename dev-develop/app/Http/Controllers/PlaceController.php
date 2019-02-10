@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\Place\PlaceCollection;
+use App\Http\Resources\Place\PlaceResource;
 use App\Model\Place;
 use Illuminate\Http\Request;
 
@@ -10,11 +12,11 @@ class PlaceController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return Place[]|\Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
      */
     public function index()
     {
-        return Place::all();
+        return PlaceCollection::collection(Place::paginate(20));
     }
 
     /**
@@ -42,11 +44,13 @@ class PlaceController extends Controller
      * Display the specified resource.
      *
      * @param  \App\Model\Place  $place
-     * @return \Illuminate\Http\Response
+     * @return PlaceResource
      */
-    public function show(Place $place)
+    public function show($id)
     {
-        //
+        $place = Place::findOrFail($id);
+        //Return as a resource
+        return new PlaceResource($place);
     }
 
     /**

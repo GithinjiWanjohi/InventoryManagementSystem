@@ -21,10 +21,17 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::apiResource('/categories', 'CategoriesController');
 
 
+Route::apiResource('/materials', 'MaterialsController');
+
+//Route::group(['prefix'=>'categories'], function(){
+//    Route::apiResource('/{materials}', 'CategoriesController');
+//});
+
 Route::apiResource('/places', 'PlaceController');
 
-
-Route::apiResource('/materials', 'MaterialsController');
+//Route::group(['prefix'=>'materials'], function(){
+//    Route::apiResource('/{materials}/categories', 'CategoriesController');
+//});
 
 
 Route::apiResource('/transaction_ins', 'TransactionInController');
