@@ -2,13 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CategoriesRequest;
 use App\Http\Resources\Categories\CategoriesCollection;
 use App\Http\Resources\Categories\CategoriesResource;
 use App\Model\Categories;
 use Illuminate\Http\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class CategoriesController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth:api')->except('index', 'show');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -35,9 +43,16 @@ class CategoriesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CategoriesRequest $request)
     {
-        //
+        $category = new Categories;
+        $category->category_name = $request->category_name;
+        $category->description = $request->description;
+        $category->save();
+
+        return response([
+            'data' => new CategoriesResource($category )
+        ], Response::HTTP_CREATED);
     }
 
     /**

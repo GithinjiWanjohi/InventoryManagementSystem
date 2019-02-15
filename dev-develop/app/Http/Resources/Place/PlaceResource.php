@@ -17,6 +17,9 @@ class PlaceResource extends JsonResource
         return [
             'place_name' => $this->place_name,
             'description' => $this->description,
+            'href' => [
+                'link' => route('places.show', $this->id)
+            ],
         ];
     }
 }

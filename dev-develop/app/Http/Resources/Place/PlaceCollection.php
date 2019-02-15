@@ -18,7 +18,7 @@ class PlaceCollection extends Resource
             'place_name' => $this->place_name,
             'description' => $this->description,
             'href' => [
-                'link' => route('products.show', $this->id)
+                'link' => route('places.show', $this->id)
             ],
         ];
     }

@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PlaceRequest;
 use App\Http\Resources\Place\PlaceCollection;
 use App\Http\Resources\Place\PlaceResource;
 use App\Model\Place;
 use Illuminate\Http\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class PlaceController extends Controller
 {
@@ -35,9 +37,16 @@ class PlaceController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PlaceRequest $request)
     {
-        //
+        $place = new Place;
+        $place->place_name = $request->place_name;
+        $place->description = $request->description;
+        $place->save();
+
+        return response([
+            'data' => new PlaceResource($place)
+        ], Response::HTTP_CREATED);
     }
 
     /**

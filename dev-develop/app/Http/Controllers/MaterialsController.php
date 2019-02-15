@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\MaterialsRequest;
 use App\Http\Resources\Materials\MaterialsCollection;
 use App\Http\Resources\Materials\MaterialsResource;
 use App\Model\Materials;
 use Illuminate\Http\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class MaterialsController extends Controller
 {
@@ -35,9 +37,16 @@ class MaterialsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(MaterialsRequest $request)
     {
-        //
+        $materials = new Materials;
+        $materials->name = $request->name;
+        $materials->categories_id = $request->categories_id;
+        $materials->save();
+
+        return response([
+            'data' => new MaterialsResource($materials )
+        ], Response::HTTP_CREATED);
     }
 
     /**
@@ -69,11 +78,11 @@ class MaterialsController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Model\Materials  $materials
-     * @return \Illuminate\Http\Response
+     * @return array
      */
     public function update(Request $request, Materials $materials)
     {
-        //
+        $materials->update($request->all());
     }
 
     /**

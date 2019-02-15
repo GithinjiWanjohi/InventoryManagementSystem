@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\TransactionInRequest;
 use App\Http\Resources\TransactionIn\TransactionInCollection;
 use App\Http\Resources\TransactionIn\TransactionInResource;
 use App\Model\TransactionIn;
 use Illuminate\Http\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class TransactionInController extends Controller
 {
@@ -35,9 +37,20 @@ class TransactionInController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(TransactionInRequest $request)
     {
-        //
+        $transaction_in = new TransactionIn;
+        $transaction_in->dateTime_in = $request->dateTime_in;
+        $transaction_in->user_id = $request->user_id;
+        $transaction_in->materials_id = $request->materials_id;
+        $transaction_in->place_id = $request->place_id;
+        $transaction_in->description = $request->description;
+        $transaction_in->quantity = $request->quantity;
+        $transaction_in->save();
+
+        return response([
+            'data' => new TransactionInResource($transaction_in)
+        ], Response::HTTP_CREATED);
     }
 
     /**

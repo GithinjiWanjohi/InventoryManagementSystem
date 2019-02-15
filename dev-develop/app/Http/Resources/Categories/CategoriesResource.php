@@ -17,6 +17,9 @@ class CategoriesResource extends JsonResource
         return [
             'category_name' => $this->category_name,
             'description' => $this->description,
+            'href' => [
+                'link' => route('categories.show', $this->id),
+            ],
         ];
     }
 }
