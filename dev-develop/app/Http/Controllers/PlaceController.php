@@ -78,11 +78,11 @@ class PlaceController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Model\Place  $place
-     * @return \Illuminate\Http\Response
+     * @return array
      */
     public function update(Request $request, Place $place)
     {
-        //
+        $place->update($request->all());
     }
 
     /**

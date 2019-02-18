@@ -86,7 +86,7 @@ class TransactionInController extends Controller
      */
     public function update(Request $request, TransactionIn $transactionIn)
     {
-        //
+        $transactionIn->update($request->all());
     }
 
     /**

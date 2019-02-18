@@ -86,7 +86,7 @@ class TransactionOutController extends Controller
      */
     public function update(Request $request, TransactionOut $transactionOut)
     {
-        //
+        $transactionOut->update($request->all());
     }
 
     /**
